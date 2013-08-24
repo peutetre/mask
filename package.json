@@ -1,0 +1,21 @@
+{
+    "name": "mask",
+    "version": "0.1.0",
+    "description": "A dead simple mask for the browser",
+    "main": "src/mask.js",
+    "keywords": [
+        "mask",
+        "browser",
+        "overlay"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/peutetre/mask.git"
+    },
+    "author": "Paul Panserrieu <paul@42loops.com> (http://42loops.com)",
+    "license": "MIT",
+    "dependencies": {
+        "q": "0.9.x",
+        "zanimo" : "0.0.x"
+    }
+}

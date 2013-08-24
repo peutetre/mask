@@ -1,0 +1,19 @@
+{
+    "name": "mask-example",
+    "version": "0.0.1",
+    "description": "usage example for mask",
+    "license": "MIT",
+    "scripts": {
+        "build": "./node_modules/browserify/bin/cmd.js ./example.js -o main.js --debug --noparse=../src/mask.js",
+        "open": "./node_modules/opener/opener.js ./index.html"
+    },
+    "dependencies": {
+        "q": "0.9.x",
+        "zanimo" : "0.0.x",
+        "qstart" : "0.0.4"
+    },
+    "devDependencies": {
+        "browserify": "~2.11",
+        "opener": "~1.3"
+    }
+}
