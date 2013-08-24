@@ -54,7 +54,7 @@ Mask.hide().then(function () {
 });
 ```
 
-### Mask.onTouch() => promise[undefined]
+### Mask.onTouch()
 
 Attach user action handler (touchstart/click)
 
@@ -66,7 +66,7 @@ function myHandler(evt) {
 Mask.onTouch(myHandler);
 ```
 
-### Mask.offTouch() => promise[undefined]
+### Mask.offTouch()
 
 Remove action handler (touchstart/click)
 
