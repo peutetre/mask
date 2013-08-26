@@ -12,7 +12,7 @@
 })(function () {
 
     function setDefaultStyle(el, style) {
-        for (attr in style) el.style[attr] = style[attr];
+        for (var attr in style) el.style[attr] = style[attr];
     }
 
     function setStyle(attr, val) {
@@ -59,6 +59,7 @@
             if (initialized) return;
             el = window.document.createElement('div');
 
+            if (config && config.id) el.id = config.id;
             if (config && config.backgroundColor)
                 defaultStyle.backgroundColor = config.backgroundColor;
             if (config && config.duration) duration = config.duration;
