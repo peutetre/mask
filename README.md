@@ -13,8 +13,8 @@ or the old school way
 ```
 
 # CI
-
-TODO travis & saucelabs via jasmine ?
+[![Build Status](https://secure.travis-ci.org/peutetre/mask.png)](http://travis-ci.org/peutetre/mask)
+[![SauceLabs Status](https://saucelabs.com/browser-matrix/mask.svg)](https://saucelabs.com/u/mask)
 
 ## API
 
