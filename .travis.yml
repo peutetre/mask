@@ -5,4 +5,4 @@ env:
   - secure: JJPBk7KSf10EhfcoyfzYP/vlcNg5zeYHVCenCnIWpaW0V2KH4fDvWeBuIut0Sj/9Tc1aaavRKLRkLocLsYz3msP8Az8/7/pZG6PaI+tpk3MAP91zEKmCAaNsH0xNkxMnSkwsM/F+yk3ZM4DVcF+iBHM02cbgC+UAu0b4M0CTRp0=
 node_js: 
 - 0.1
-script: cd test; npm install; npm run build; cd ..; grunt test-sauce
+script: cd test; npm install; npm run build; cd ..; grunt test-sauce;
