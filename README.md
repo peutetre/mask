@@ -1,62 +1,102 @@
-# Mask.js a dead simple mask
+# Mask.js a dead simple mask for the browser
 
 ## Install
+
+with browserify and npm:
 
 ```
 npm install mask
 ```
 
-or the old school way
+or the old school way:
 
 ``` html
+<script src="q.js"></script>
+<script src="zanimo.js"></script>
 <script src="mask.js"></script>
 ```
 
-# CI
-[![Build Status](https://secure.travis-ci.org/peutetre/mask.png)](http://travis-ci.org/peutetre/mask)
+Mask depends on :
+
+* Q a promise library: http://github.com/kriskowal/q
+* Zanimo an animation library: http://github.com/peutetre/zanimo
+
+# Test (IN PROGRESS) [![Build Status](https://secure.travis-ci.org/peutetre/mask.png)](http://travis-ci.org/peutetre/mask)
+
 [![SauceLabs Status](https://saucelabs.com/browser-matrix/mask.svg)](https://saucelabs.com/u/mask)
+
+to run the tests in the browser:
+
+go to the test folder and install all dependencies
+
+```
+npm install
+```
+
+build the tests
+
+```
+npm run build
+```
+
+open browser on test page
+
+```
+npm run open
+```
 
 ## API
 
-### Mask.init(option)
+### Mask.init(option) => DOMElement
 
-Init the mask
+Init the mask and return the created `<div>`
 
 ``` javaScript
 var Mask = require('mask');
 
 // init the mask
 Mask.init({
-    // set background color
+    // set background color (optional)
     backgroundColor:'rgba(34,25,123,0.5)',
-    // set show/hide fade animation duration
+    // set show/hide fade animation duration (optional)
     duration:500
 });
 ```
 
-### Mask.show() => promise[undefined]
+### Mask.show() => promise[DOMElement]
 
 Show the mask
 
 ``` javaScript
-Mask.show().then(function () {
-    // do something...
-});
+Mask.show()
+    .then(function (el) {
+        // do something...
+    }, function (err) {
+        console.log(err);
+        // occurs when the mask is already displayed
+        // or when the mask is in transition.
+    });
 ```
 
-### Mask.hide() => promise[undefined]
+### Mask.hide() => promise[DOMElement]
 
 Hide the mask
 
 ``` javaScript
-Mask.hide().then(function () {
-    // do something...
+Mask.hide()
+    .then(function (el) {
+        // do something...
+    }, function (err) {
+        console.log(err);
+        // occurs when the mask is already hidden
+        // or when the mask is in transition.
+    });
 });
 ```
 
-### Mask.onTouch()
+### Mask.onTouch(f)
 
-Attach user action handler (touchstart/click)
+Set the touchstart/click event handler
 
 ``` javaScript
 function myHandler(evt) {
@@ -64,12 +104,4 @@ function myHandler(evt) {
 }
 
 Mask.onTouch(myHandler);
-```
-
-### Mask.offTouch()
-
-Remove action handler (touchstart/click)
-
-``` javaScript
-Mask.offTouch(myHandler);
 ```
