@@ -2,7 +2,7 @@
  * test.js
  */
 
-var Mask = require('mask'),
+var Mask = require('../lib/mask'),
     expect = require('expect.js');
 
 exports.def =  function () {
