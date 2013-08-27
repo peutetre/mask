@@ -18,13 +18,13 @@ module.exports = function(grunt) {
         },
         jshint: {
             all: {
-                src: ['src/mask.js']
+                src: ['src/mask.js', 'test/test.js']
             }
         },
         'saucelabs-mocha': {
             all: {
                 options: {
-                    urls: ["http://127.0.0.1:9999/test/index.html"],
+                    urls: ["http://localhost:9999/test/index.html"],
                     tunnelTimeout: 5,
                     build: (new Date()).getTime(),
                     concurrency: 3,
