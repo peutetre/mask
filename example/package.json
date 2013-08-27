@@ -4,7 +4,7 @@
     "description": "usage example for mask",
     "license": "MIT",
     "scripts": {
-        "build": "./node_modules/browserify/bin/cmd.js ./example.js -o main.js --debug --noparse=../src/mask.js",
+        "build": "./node_modules/browserify/bin/cmd.js ./example.js -o main.js --debug --noparse=../lib/mask.js",
         "open": "./node_modules/opener/opener.js ./index.html"
     },
     "dependencies": {
