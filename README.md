@@ -1,4 +1,6 @@
-# Mask.js a dead simple mask for the browser
+# Mask.js a dead simple mask
+
+a simple mask for the modern browser.
 
 ## Install
 
