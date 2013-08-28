@@ -23,7 +23,13 @@ Mask depends on :
 * Q a promise library: http://github.com/kriskowal/q
 * Zanimo an animation library: http://github.com/peutetre/zanimo
 
+# Example
+
+demo: http://peutetre.github.io/mask/example/
+
 # Test (IN PROGRESS) [![Build Status](https://secure.travis-ci.org/peutetre/mask.png)](http://travis-ci.org/peutetre/mask)
+
+test runner: http://peutetre.github.io/mask/test/
 
 [![SauceLabs Status](https://saucelabs.com/browser-matrix/mask.svg)](https://saucelabs.com/u/mask)
 
