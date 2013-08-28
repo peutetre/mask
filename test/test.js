@@ -53,13 +53,13 @@ onload = function () {
                 }, err("Mask should fail!"));
             });
 
-            it('Mask.show must fail is the Mask is currently animated');
-            it('Mask.hide must fail is the Mask is currently animated');
+            //it('Mask.show must fail is the Mask is currently animated');
+            //it('Mask.hide must fail is the Mask is currently animated');
 
         });
 
         describe('Mask tap/click event handler', function () {
-            it('Mask must call the event handler on tap/click events');
+            //it('Mask must call the event handler on tap/click events');
         });
     });
 
