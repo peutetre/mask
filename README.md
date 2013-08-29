@@ -27,7 +27,7 @@ Mask depends on :
 
 demo: http://peutetre.github.io/mask/example/
 
-# Test (IN PROGRESS) [![Build Status](https://secure.travis-ci.org/peutetre/mask.png)](http://travis-ci.org/peutetre/mask)
+# Test (IN PROGRESS) [![Build Status](https://secure.travis-ci.org/peutetre/mask.png)](http://travis-ci.org/peutetre/mask) [![Dependency Status](https://gemnasium.com/peutetre/mask.png)](https://gemnasium.com/peutetre/mask)
 
 test runner: http://peutetre.github.io/mask/test/
 
