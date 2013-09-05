@@ -4,7 +4,8 @@
 
 var Mask = require('../lib/mask'),
     expect = require('expect.js'),
-    err = function (s) { return function () { console.log(s); throw s; } };
+    Q = require('q'),
+    err = function (s) { return function (err) { console.log(s, err.message); throw new Error(s, err); } };
 
 onload = function () {
     describe('Mask', function () {
@@ -31,7 +32,7 @@ onload = function () {
             });
 
             it('Mask should have a underlying DOM element after being init()', function () {
-                Mask.init({id:'blabla'});
+                Mask.init({id:'blabla'/*, duration:1000 */});
                 expect(window.document.getElementById('blabla')).to.be.a(HTMLElement);
             });
         });
@@ -53,18 +54,53 @@ onload = function () {
                 }, err("Mask should fail!"));
             });
 
-            it('Mask.show must fail is the Mask is currently animated');
-            it('Mask.hide must fail is the Mask is currently animated');
+            it('Mask.hide must fail is the Mask is currently animated', function (done) {
+                Q.all([
+                    Mask.show(),
+                    Q.delay(100).then(function () {
+                        Mask.hide().then(err("Mask should fail!"), function (err) {
+                            var f = function () { throw err; };
+                            expect(f).to.throwException(/Mask is in use!/);
+                        });
+                    })
+                ]).then(function () { done(); }, err("Mask should fail!"));
+            });
 
+            it('Mask.show must fail is the Mask is currently animated', function (done) {
+                Q.all([
+                    Mask.hide(),
+                    Q.delay(100).then(function () {
+                        Mask.show().then(err("Mask should fail!"), function (err) {
+                            var f = function () { throw err; };
+                            expect(f).to.throwException(/Mask is in use!/);
+                        });
+                    })
+                ]).then(function () { done(); }, err("Mask should fail!"));
+            });
         });
 
         describe('Mask tap/click event handler', function () {
-            it('Mask must call the event handler on tap/click events');
+            it('Mask must call the event handler on tap/click events', function (done) {
+                this.timeout(5000);
+                Mask.onTouch(function () {
+                    Mask.hide().then(function () { done(); }, function () { done(); });
+                });
+                Mask.show().then(function () {
+                    setTimeout(function () {
+                        var evt = document.createEvent("MouseEvents");
+                        evt.initMouseEvent(
+                            window.document.ontouchstart === null ? "touchstart" : "click",
+                            true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null
+                        );
+                        document.getElementById('blabla').dispatchEvent(evt);
+                    }, 100);
+                }, err("Mask should fail!"));
+            });
         });
     });
 
     setTimeout(function () {
-        mocha.checkLeaks();
+        //mocha.checkLeaks();
         mocha.run();
     }, 1000);
 };
