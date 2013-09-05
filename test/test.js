@@ -87,11 +87,11 @@ onload = function () {
                 });
                 Mask.show().then(function () {
                     setTimeout(function () {
-                         var evt = new MouseEvent('click', {
-                            'view': window,
-                            'bubbles': true,
-                            'cancelable': true
-                        });
+                        var evt = document.createEvent("MouseEvents");
+                        evt.initMouseEvent(
+                            window.document.ontouchstart === null ? "touchstart" : "click",
+                            true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null
+                        );
                         document.getElementById('blabla').dispatchEvent(evt);
                     }, 100);
                 }, err("Mask should fail!"));
