@@ -97,6 +97,14 @@ onload = function () {
                 }, err("Mask should fail!"));
             });
         });
+
+
+        describe('Mask.style({ /* some css style */ })', function () {
+            it('Mask.style({ zIndex:200 }) must set the z-index to `200`', function () {
+                Mask.style({ zIndex:200 });
+                expect(document.getElementById('blabla').style.zIndex).to.be('200');
+            });
+        });
     });
 
     setTimeout(function () {

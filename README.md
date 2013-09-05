@@ -71,6 +71,16 @@ Mask.init({
 });
 ```
 
+### Mask.style(option)
+
+style the underlying element
+
+``` javaScript
+Mask.style({
+    zIndex : 200
+});
+```
+
 ### Mask.show() => promise[DOMElement]
 
 Show the mask
@@ -113,3 +123,8 @@ function myHandler(evt) {
 
 Mask.onTouch(myHandler);
 ```
+
+## ChangeLog
+
+### v0.1.1
+    * add Mask.style()
