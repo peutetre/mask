@@ -13,6 +13,11 @@
         "url": "git://github.com/peutetre/mask.git"
     },
     "author": "Paul Panserrieu <paul@42loops.com> (http://42loops.com)",
+    "contributors" : [{
+        "name" : "Gaétan Renaudeau",
+        "email" : "renaudeau.gaetan@gmail.com",
+        "url" : "http://http://greweb.me/"
+    }],
     "license": "MIT",
     "dependencies": {
         "q": "0.9.x",
