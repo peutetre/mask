@@ -126,6 +126,9 @@ Mask.onTouch(myHandler);
 
 ## ChangeLog
 
+### v0.1.4
+    * using opacity & opaque background for not breaking in IE8.
+
 ### v0.1.3
     * add the possibility to override the zIndex.
 
