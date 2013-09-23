@@ -126,5 +126,8 @@ Mask.onTouch(myHandler);
 
 ## ChangeLog
 
+### v0.1.2
+    * add the possibility to override the transition function.
+
 ### v0.1.1
     * add Mask.style()
