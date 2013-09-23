@@ -126,6 +126,9 @@ Mask.onTouch(myHandler);
 
 ## ChangeLog
 
+### v0.1.3
+    * add the possibility to override the zIndex.
+
 ### v0.1.2
     * add the possibility to override the transition function.
 
