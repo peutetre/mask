@@ -14,6 +14,7 @@ or the old school way:
 
 ``` html
 <script src="q.js"></script>
+<script src="qanimationframe.js"></script>
 <script src="zanimo.js"></script>
 <script src="mask.js"></script>
 ```
@@ -21,6 +22,7 @@ or the old school way:
 Mask depends on :
 
 * Q a promise library: http://github.com/kriskowal/q
+* qanimationframe library: https://github.com/gre/qanimationframe
 * Zanimo an animation library: http://github.com/peutetre/zanimo
 
 # Example
