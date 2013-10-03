@@ -128,6 +128,7 @@ Mask.onTouch(myHandler);
 
 ### v0.1.5
     * Make Mask working on IE8.
+    * Add QanimationFrame dep.
 
 ### v0.1.4
     * using opacity & opaque background for not breaking in IE8.
