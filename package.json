@@ -1,6 +1,6 @@
 {
     "name": "mask",
-    "version": "0.1.3",
+    "version": "0.1.5",
     "description": "A dead simple mask for the browser",
     "main": "lib/mask.js",
     "keywords": [
@@ -21,6 +21,7 @@
     "license": "MIT",
     "dependencies": {
         "q": "0.9.x",
+        "qanimationframe": "1.0.x",
         "zanimo" : "0.0.x"
     },
     "devDependencies": {
