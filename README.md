@@ -128,6 +128,9 @@ Mask.onTouch(myHandler);
 
 ## ChangeLog
 
+### v0.1.6
+    * Fix race condition on Mask show/hide operations.
+
 ### v0.1.5
     * Make Mask working on IE8.
     * Add QanimationFrame dep.
