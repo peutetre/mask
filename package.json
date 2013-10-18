@@ -16,7 +16,12 @@
     "contributors" : [{
         "name" : "Gaétan Renaudeau",
         "email" : "renaudeau.gaetan@gmail.com",
-        "url" : "http://http://greweb.me/"
+        "url" : "http://greweb.me/"
+    },
+    {
+        "name" : "S. Nizar",
+        "email" : "nisehl@gmail.com",
+        "url" : "http://morningpotion.com/"
     }],
     "license": "MIT",
     "dependencies": {

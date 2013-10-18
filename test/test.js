@@ -54,7 +54,7 @@ onload = function () {
                 }, err("Mask should fail!"));
             });
 
-            it('Mask.hide must fail is the Mask is currently animated', function (done) {
+            it('Mask.hide must fail if the Mask is currently animated', function (done) {
                 Q.all([
                     Mask.show(),
                     Q.delay(100).then(function () {
@@ -66,7 +66,7 @@ onload = function () {
                 ]).then(function () { done(); }, err("Mask should fail!"));
             });
 
-            it('Mask.show must fail is the Mask is currently animated', function (done) {
+            it('Mask.show must fail if the Mask is currently animated', function (done) {
                 Q.all([
                     Mask.hide(),
                     Q.delay(100).then(function () {
@@ -74,6 +74,26 @@ onload = function () {
                             var f = function () { throw err; };
                             expect(f).to.throwException(/Mask is in use!/);
                         });
+                    })
+                ]).then(function () { done(); }, err("Mask should fail!"));
+            });
+
+            it('Mask.show must fail on a race condition', function (done) {
+                Q.all([
+                    Mask.show(),
+                    Mask.show().then(err("Mask should fail!"), function (err) {
+                        var f = function () { throw err; };
+                        expect(f).to.throwException(/Mask is in use!/);
+                    })
+                ]).then(function () { done(); }, err("Mask should fail!"));
+            });
+
+            it('Mask.hide must fail on race condition', function (done) {
+                Q.all([
+                    Mask.hide(),
+                    Mask.hide().then(err("Mask should fail!"), function (err) {
+                        var f = function () { throw err; };
+                        expect(f).to.throwException(/Mask is in use!/);
                     })
                 ]).then(function () { done(); }, err("Mask should fail!"));
             });
