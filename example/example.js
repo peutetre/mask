@@ -4,12 +4,11 @@ var Qstart = require('qstart'),
 
 function main() {
     Mask.init();
-
     var btn = window.document.getElementById("btn1"),
         log = function (s) { return function () { console.log(s); } },
-        err = function (s) { return function (err) { console.log(s + " " + err); } };
+        err = function (s) { return function (err) { console.log(s + " " + err, err.stack); } };
 
-    btn.addEventListener('touchstart', function (evt) {
+    btn.addEventListener(window.document.ontouchstart === null ? "touchstart": "click", function (evt) {
         Mask.show().then(log("Mask displayed"), err("Oops show,"));
     });
 

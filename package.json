@@ -1,6 +1,6 @@
 {
     "name": "mask",
-    "version": "0.1.0",
+    "version": "0.1.6",
     "description": "A dead simple mask for the browser",
     "main": "lib/mask.js",
     "keywords": [
@@ -13,9 +13,20 @@
         "url": "git://github.com/peutetre/mask.git"
     },
     "author": "Paul Panserrieu <paul@42loops.com> (http://42loops.com)",
+    "contributors" : [{
+        "name" : "Gaétan Renaudeau",
+        "email" : "renaudeau.gaetan@gmail.com",
+        "url" : "http://greweb.me/"
+    },
+    {
+        "name" : "S. Nizar",
+        "email" : "nisehl@gmail.com",
+        "url" : "http://morningpotion.com/"
+    }],
     "license": "MIT",
     "dependencies": {
         "q": "0.9.x",
+        "qanimationframe": "1.0.x",
         "zanimo" : "0.0.x"
     },
     "devDependencies": {

@@ -5,7 +5,7 @@
 var Mask = require('../lib/mask'),
     expect = require('expect.js'),
     Q = require('q'),
-    err = function (s) { return function (err) { console.log(s, err.message); throw new Error(s, err); } };
+    err = function (s) { return function (err) { console.log(s, err.message); throw new Error(s, err); }; };
 
 onload = function () {
     describe('Mask', function () {
@@ -17,7 +17,7 @@ onload = function () {
 
             it('Mask.show() should fail when the mask is not initialized', function (done) {
                 Mask.show().then(err("Mask should fail!"), function (err) {
-                    var f = function () { throw err; }
+                    var f = function () { throw err; };
                     expect(f).to.throwException(/Mask is not initialized!/);
                     done();
                 });
@@ -25,7 +25,7 @@ onload = function () {
 
             it('Mask.hide() should fail when the mask is not initialized', function (done) {
                 Mask.hide().then(err("Mask should fail!"), function (err) {
-                    var f = function () { throw err; }
+                    var f = function () { throw err; };
                     expect(f).to.throwException(/Mask is not initialized!/);
                     done();
                 });
@@ -54,7 +54,7 @@ onload = function () {
                 }, err("Mask should fail!"));
             });
 
-            it('Mask.hide must fail is the Mask is currently animated', function (done) {
+            it('Mask.hide must fail if the Mask is currently animated', function (done) {
                 Q.all([
                     Mask.show(),
                     Q.delay(100).then(function () {
@@ -66,7 +66,7 @@ onload = function () {
                 ]).then(function () { done(); }, err("Mask should fail!"));
             });
 
-            it('Mask.show must fail is the Mask is currently animated', function (done) {
+            it('Mask.show must fail if the Mask is currently animated', function (done) {
                 Q.all([
                     Mask.hide(),
                     Q.delay(100).then(function () {
@@ -74,6 +74,26 @@ onload = function () {
                             var f = function () { throw err; };
                             expect(f).to.throwException(/Mask is in use!/);
                         });
+                    })
+                ]).then(function () { done(); }, err("Mask should fail!"));
+            });
+
+            it('Mask.show must fail on a race condition', function (done) {
+                Q.all([
+                    Mask.show(),
+                    Mask.show().then(err("Mask should fail!"), function (err) {
+                        var f = function () { throw err; };
+                        expect(f).to.throwException(/Mask is in use!/);
+                    })
+                ]).then(function () { done(); }, err("Mask should fail!"));
+            });
+
+            it('Mask.hide must fail on race condition', function (done) {
+                Q.all([
+                    Mask.hide(),
+                    Mask.hide().then(err("Mask should fail!"), function (err) {
+                        var f = function () { throw err; };
+                        expect(f).to.throwException(/Mask is in use!/);
                     })
                 ]).then(function () { done(); }, err("Mask should fail!"));
             });
@@ -95,6 +115,14 @@ onload = function () {
                         document.getElementById('blabla').dispatchEvent(evt);
                     }, 100);
                 }, err("Mask should fail!"));
+            });
+        });
+
+
+        describe('Mask.style({ /* some css style */ })', function () {
+            it('Mask.style({ zIndex:200 }) must set the z-index to `200`', function () {
+                Mask.style({ zIndex:200 });
+                expect(parseInt(document.getElementById('blabla').style.zIndex, 10)).to.be(200);
             });
         });
     });

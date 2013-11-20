@@ -14,6 +14,7 @@ or the old school way:
 
 ``` html
 <script src="q.js"></script>
+<script src="qanimationframe.js"></script>
 <script src="zanimo.js"></script>
 <script src="mask.js"></script>
 ```
@@ -21,6 +22,7 @@ or the old school way:
 Mask depends on :
 
 * Q a promise library: http://github.com/kriskowal/q
+* qanimationframe library: https://github.com/gre/qanimationframe
 * Zanimo an animation library: http://github.com/peutetre/zanimo
 
 # Example
@@ -71,6 +73,16 @@ Mask.init({
 });
 ```
 
+### Mask.style(option)
+
+style the underlying element
+
+``` javaScript
+Mask.style({
+    zIndex : 200
+});
+```
+
 ### Mask.show() => promise[DOMElement]
 
 Show the mask
@@ -113,3 +125,24 @@ function myHandler(evt) {
 
 Mask.onTouch(myHandler);
 ```
+
+## ChangeLog
+
+### v0.1.6
+    * Fix race condition on Mask show/hide operations.
+
+### v0.1.5
+    * Make Mask working on IE8.
+    * Add QanimationFrame dep.
+
+### v0.1.4
+    * using opacity & opaque background for not breaking in IE8.
+
+### v0.1.3
+    * add the possibility to override the zIndex.
+
+### v0.1.2
+    * add the possibility to override the transition function.
+
+### v0.1.1
+    * add Mask.style()
