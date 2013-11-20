@@ -2,4 +2,8 @@
 /example/node_modules/
 /example/main.js
 /test/node_modules/
+<<<<<<< HEAD
 /test/main.js
+=======
+/example/node_modules/
+>>>>>>> 29a97c6... oops gitignore
