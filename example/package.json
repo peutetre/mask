@@ -5,6 +5,7 @@
     "license": "MIT",
     "scripts": {
         "build": "./node_modules/browserify/bin/cmd.js ./example.js -o main.js --debug",
+        "prod": "./node_modules/browserify/bin/cmd.js ./example.js -o main.js",
         "open": "./node_modules/opener/opener.js ./index.html"
     },
     "dependencies": {
