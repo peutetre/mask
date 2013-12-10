@@ -35,25 +35,14 @@ test runner: http://peutetre.github.io/mask/test/
 
 [![SauceLabs Status](https://saucelabs.com/browser-matrix/mask.svg)](https://saucelabs.com/u/mask)
 
-to run the tests in the browser:
-
-go to the test folder and install all dependencies
+# Build tests and example
 
 ```
 npm install
-```
-
-build the tests
-
-```
 npm run build
 ```
 
-open browser on test page
-
-```
-npm run open
-```
+open a browser at `test/index.html`
 
 ## API
 
@@ -127,6 +116,10 @@ Mask.onTouch(myHandler);
 ```
 
 ## ChangeLog
+
+### v0.1.7
+    * Clean npm package by adding a .npmignore
+    * Remove package.json from example and test folder
 
 ### v0.1.6
     * Fix race condition on Mask show/hide operations.
