@@ -10,21 +10,6 @@ with browserify and npm:
 npm install mask
 ```
 
-or the old school way:
-
-``` html
-<script src="q.js"></script>
-<script src="qanimationframe.js"></script>
-<script src="zanimo.js"></script>
-<script src="mask.js"></script>
-```
-
-Mask depends on :
-
-* Q a promise library: http://github.com/kriskowal/q
-* qanimationframe library: https://github.com/gre/qanimationframe
-* Zanimo an animation library: http://github.com/peutetre/zanimo
-
 # Example
 
 demo: http://peutetre.github.io/mask/example/
@@ -116,6 +101,11 @@ Mask.onTouch(myHandler);
 ```
 
 ## ChangeLog
+
+### v0.2.0
+    * upgrade to q 1.0.x
+    * upgrade to zanimo 1.0.x
+    * rm qanimationframe dependency
 
 ### v0.1.7
     * Clean npm package by adding a .npmignore
