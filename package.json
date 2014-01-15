@@ -1,6 +1,6 @@
 {
     "name": "mask",
-    "version": "0.1.7",
+    "version": "0.2.0",
     "description": "A dead simple mask for the browser",
     "main": "lib/mask.js",
     "keywords": [
@@ -31,21 +31,19 @@
         "clean" : "rm ./example/main.js ./test/main.js"
     },
     "dependencies": {
-        "q": "0.9.x",
-        "qanimationframe": "1.0.x",
-        "zanimo" : "0.0.x"
+        "q": "1.0.x",
+        "zanimo" : "1.0.x"
     },
     "devDependencies": {
-        "mocha": "~1.12.0",
-        "expect.js": "0.2.0",
-        "browserify": "2.29.1",
-        "qstart" : "0.0.4",
-        "grunt" : "~0.4.0",
-        "grunt-cli" : "~0.1.6",
-        "grunt-contrib-connect" : "~0.1.2",
-        "grunt-contrib-jshint": "~0.6.0",
-        "grunt-contrib-watch": "~0.4.4",
-        "mocha": "~1.12.0",
-        "grunt-saucelabs" : "~4.0.2"
+        "mocha": "1.12.x",
+        "expect.js": "0.2.x",
+        "browserify": "2.29.x",
+        "qstart" : "0.0.x",
+        "grunt" : "0.4.x",
+        "grunt-cli" : "0.1.x",
+        "grunt-contrib-connect" : "0.1.x",
+        "grunt-contrib-jshint": "0.6.x",
+        "grunt-contrib-watch": "0.4.x",
+        "grunt-saucelabs" : "4.0.x"
     }
 }
