@@ -1,6 +1,6 @@
 {
     "name": "mask",
-    "version": "0.2.1",
+    "version": "0.2.2",
     "description": "A dead simple mask for the browser",
     "main": "lib/mask.js",
     "keywords": [
@@ -26,8 +26,8 @@
     "license": "MIT",
     "scripts": {
         "example" : "./node_modules/browserify/bin/cmd.js ./example/example.js -o ./example/main.js --debug;",
-        "tests" : "./node_modules/browserify/bin/cmd.js ./test/test.js -o ./test/main.js --debug;",
-        "build" : "npm run tests; npm run example;",
+        "test" : "./node_modules/browserify/bin/cmd.js ./test/test.js -o ./test/main.js --debug;",
+        "build" : "npm run test; npm run example;",
         "clean" : "rm ./example/main.js ./test/main.js"
     },
     "dependencies": {
