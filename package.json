@@ -1,6 +1,6 @@
 {
     "name": "mask",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "description": "A dead simple mask for the browser",
     "main": "lib/mask.js",
     "keywords": [
@@ -32,7 +32,7 @@
     },
     "dependencies": {
         "q": "1.0.x",
-        "zanimo" : "1.0.x"
+        "zanimo" : "1.1.x"
     },
     "devDependencies": {
         "mocha": "1.12.x",
